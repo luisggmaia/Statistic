@@ -13,8 +13,8 @@ class Quantity:
         """
         self.name = name
         self.value = value
-        self.Var = Var
-        self.sigma = sigma
+        self.Var = Var if sigma is None else sigma**2
+        self.sigma = sigma if Var is None else Var**0.5
 
     def __str__(self):
         """
